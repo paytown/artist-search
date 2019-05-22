@@ -40,7 +40,8 @@ module.exports = {
             options: {
               sourceMap: true,
               modules: true,
-              importLoaders: 1
+              importLoaders: 1,
+              import: true
             }
           },
           {
@@ -48,8 +49,10 @@ module.exports = {
             options: {
               sourceMap: true,
               plugins: [
+                require('postcss-import')(),
                 require('autoprefixer')(),
-                require('postcss-nested')()
+                require('postcss-nested')(),
+                require('postcss-simple-vars')()
               ]
             }
           }
